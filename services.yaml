@@ -1,0 +1,65 @@
+send_command:
+  description: Send a command to a Spider Farmer GGS device
+  fields:
+    device_type:
+      description: Device type (ps5, ps3, t8, lc, cb)
+      required: true
+      example: "ps5"
+    mac:
+      description: MAC address of the device
+      required: true
+      example: "AABBCCDDEE"
+    method:
+      description: Command method
+      required: true
+      selector:
+        select:
+          options:
+            - getConfigField
+            - setConfigField
+            - getDevSta
+            - getSysSta
+    field:
+      description: Config field name
+      required: false
+      example: "light_mode"
+    value:
+      description: Value to set
+      required: false
+      example: "on"
+
+get_config:
+  description: Get a config field from a Spider Farmer GGS device
+  fields:
+    device_type:
+      description: Device type (ps5, ps3, t8, lc, cb)
+      required: true
+      example: "ps5"
+    mac:
+      description: MAC address of the device
+      required: true
+      example: "AABBCCDDEE"
+    field:
+      description: Config field name (empty for all fields)
+      required: false
+      example: "light_mode"
+
+set_config:
+  description: Set a config field on a Spider Farmer GGS device
+  fields:
+    device_type:
+      description: Device type (ps5, ps3, t8, lc, cb)
+      required: true
+      example: "ps5"
+    mac:
+      description: MAC address of the device
+      required: true
+      example: "AABBCCDDEE"
+    field:
+      description: Config field name
+      required: true
+      example: "light_mode"
+    value:
+      description: Value to set
+      required: true
+      example: "on"

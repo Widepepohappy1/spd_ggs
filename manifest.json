@@ -1,0 +1,18 @@
+{
+  "domain": "spiderfarmer_ggs",
+  "name": "Spider Farmer GGS",
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": ["mqtt"],
+  "documentation": "https://github.com/custom-components/spiderfarmer_ggs",
+  "integration_type": "hub",
+  "iot_class": "local_push",
+  "loggers": [],
+  "requirements": [],
+  "version": "1.0.0",
+  "mqtt": [
+    "ggs/+/+/status",
+    "ggs/+/+/sensors",
+    "ggs/+/+/system"
+  ]
+}
