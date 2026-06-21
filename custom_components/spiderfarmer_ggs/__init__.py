@@ -187,21 +187,21 @@ def _register_services(hass: HomeAssistant):
         topic = MQTT_CMD_TOPIC.format(device_type=device_type, mac=mac)
         await coordinator.publish_command(topic, payload)
 
-    hass.services.register(
+    hass.services.async_register(
         DOMAIN,
         SERVICE_SEND_COMMAND,
         handle_send_command,
         schema=_SEND_COMMAND_SCHEMA,
     )
 
-    hass.services.register(
+    hass.services.async_register(
         DOMAIN,
         SERVICE_GET_CONFIG,
         handle_get_config,
         schema=_GET_CONFIG_SCHEMA,
     )
 
-    hass.services.register(
+    hass.services.async_register(
         DOMAIN,
         SERVICE_SET_CONFIG,
         handle_set_config,
